@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <!-- <link rel="stylesheet" href="globals.css" /> -->
+  <link href="../css/list.css" rel="stylesheet"/>
+  <title>
+    CFP
+  </title>
+
+</head>
+<body>
+<div class="list_wrap">
+  <div class="list_con_title">
+    <div class="title_wrap">
+      <div class="m_title">
+        <strong class="main_title">Global CFP Database </strong>
+        <span class="new_call">10proi</span>
+      </div>
+      <div class="s_title">
+        <p class="sub_title">CEPI, BMGF 등의 글로벌 Funding 기관의 Call for Proposal Data를 수집 관리함.</p>
+      </div>
+    </div>
+
+    <div class="btn">
+      <button class="btn_nomal">Delete</button>
+      <button class="btn_add">+ Add New</button>
+    </div>
+  </div>
+
+  <div class="con_bar">
+    <div class="tab_wrap">
+      <ul class="tabs">
+        <li class="actvie">View All</li>
+        <li>Open</li>
+        <li>Closed</li>
+      </ul>
+    </div>
+
+    <div class="input-with-label">
+      <div class="input">
+        <div class="content-3">
+          <img class="img" src="../img/search.svg" alt="img"/>
+          <input class="text-4" placeholder="Search" type="text"/>
+
+        </div>
+      </div>
+
+      <button class="btn_nomal"><img class="img" src="../img/filters-lines.svg">Filters</button>
+    </div>
+
+
+  </div>
+</div>
+<div class="list_con">
+  <table class="call_table">
+    <colgroup>
+      <col style="width: 5px;">
+      <col style="width: 30px;">
+      <col style="width: 400px;">
+      <col style="width: 300px;">
+      <col style="width: 100px;">
+      <col style="width: 50px;">
+      <col style="width: 50px;">
+      <col style="width: 10px;">
+    </colgroup>
+    <thead>
+    <th>
+      <!-- <label for="select-all">
+        <img src="../img/checkbox-5.svg" alt="체크박스 이미지">
+      </label> -->
+      <input id="select-all" type="checkbox">
+    </th>
+    <th>Agency</th>
+    <th>Title</th>
+    <th>Subtitle (Keyword)</th>
+    <th>Close date</th>
+    <th>Information</th>
+    <th>SK가능성</th>
+    <th>Files</th>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+  </table>
+  <div class="pagination mt_10">
+    <div class="paging_text">Page 1 of 10</div>
+    <div class="paging_btn">
+      <button class="btn_nomal">Previous</button>
+      <button class="btn_nomal">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const listData = [
+    {
+      "cfp_id": "2",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-01-23",
+      "close_date": "2024-04-23",
+      "title_class": "",
+      "cfp_maintitle": "Novel RNA vaccine platform technologies\r\nfor emerging and select endemic infectious\r\ndiseases\r\nExtended opportunity",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "https://cepi.net/wp-content/uploads/2023/01/CfP_mRNA-platform_FA2.pdf",
+      "objectives": "기존의 mRNA 기술보다 상당한 이점*을 제공하는 잠재적으로 높은 영향력의 혁신을 바탕으로 한 새로운 RNA 플랫폼 기술에 대한 관심 표명(EOI) 제출 요청. \r\n\r\n(*이러한 이점에는 multivalency, immunogenicity/reactogenicity, storage and stability, productivity, response time, COGs 측면 포함)",
+      "objectives_kr": "",
+      "scope": " 초기 발견, 전임상 PoC 연구, 제한적인 초기 임상 PoC 연구",
+      "scope_kr": "",
+      "target_disease_pathogen": "Rabies\r\nRotavirus \r\nYellow Fever\r\nChikungunya\r\nJapanese Encephalitis\r\nHepatitis B\r\nInfluenza\r\nMeasles\r\nOther viral or bacterial indication as agreed with CEPI",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "Novel RNA",
+      "total_funding": "CFP 상에 명시 X.\r\n추가 조사 필",
+      "possibility": "90%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/Seeking predictors of vaccine efficacy identifying correlates of protection to support vaccine devel.pdf",
+      "created_on": null,
+      "created_id": ""
+    },
+    {
+      "cfp_id": "1",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-05-23",
+      "close_date": "2024-12-23",
+      "title_class": "",
+      "cfp_maintitle": "Vaccine manufacturability focused on speed.",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "https://cepi.net/wp-content/uploads/2023/05/Launched_Vaccine-manufacturability-focused-on-speed-Call-for-Proposals.pdf",
+      "objectives": "새로운 병원체 발생에 대응하여 임상 시험에 긴급히 사용될 수 있도록 CTM 제작 시간 단축을 위한 제조 관련 혁신 및 기술 제안 요청",
+      "objectives_kr": "",
+      "scope": "Focus 1: 배치 또는 연속 제조 모드에서의 플랫폼 프로세스 개발, 프로세스 최적화, 표준화 및 가속화(예: mRNA, 바이러스 벡터, 단백질 또는 기타 새로운 플랫폼 고려).\r\n\r\nFocus 2: DS/DP 배치 출하 및 MCB/MVS의 가용성을 가속화할 수 있는 분석 기술. 배치 출하 시험법에 대한 신속한 기술이 존재하며, 새로운 분석 기술(예: identity/potency tests or reagents)이 설정되어야 함. 이러한 기술은 제품 허가의 일부로 구현이 필요함 \r\n\r\nFocus 3: 세포 기반 제조 단계를 가속화하는 혁신, 합성 접근법 포함(예: mRNA 제조를 위한 합성 DNA(디옥시리보핵산) 사용). 세포 없는(cell-free) 제조 혁신의 구현(예: 단백질 생산을 위한 세포 용해물 사용)은 백신 생산을 개선할 수 있음\r\n\r\nFocus 4: CTM 가용성을 가속화할 수 있는 기타 제조 관련 혁신. 인공지능(AI)을 사용하여 제조 공정을 개발하고 제어하는 것은 승인 후 신속한 백신 배치에 도움이 될 수 있음",
+      "scope_kr": "",
+      "target_disease_pathogen": "Disease X ",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "mRNA\r\nprotein\r\nviral vectors",
+      "total_funding": "US$25M over up to 3 years",
+      "possibility": "70%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/Seeking predictors of vaccine efficacy identifying correlates of protection to support vaccine devel.pdf",
+      "created_on": null,
+      "created_id": ""
+    },
+    {
+      "cfp_id": "3",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-09-22",
+      "close_date": "2024-11-22",
+      "title_class": "",
+      "cfp_maintitle": "Human vaccine development against Rift Valley Fever (CfP3ii)",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "https://cepi.net/wp-content/uploads/2022/09/16092022_RVF-Funding-Call_Call-Text.pdf",
+      "objectives": "RVFV 후보에 대한 임상 단계 백신 개발 계획에 대한 제안서 요청\r\n(CEPI와 EU Horizon 프로그램과의 협력으로 인해 발생한 두 번째 co-funding 지원)",
+      "objectives_kr": "",
+      "scope": "a) 엔데믹 지역에서 1/2상 임상 시험\r\nb) GMP 생산 및 release 비용 \r\nc) 독성시험 비용 (초기 단계의 전임상 개발은 지원 X) -> 전임상 PoC data를 보유한 후보에 한해 지원 \r\nd) 허가 비용 \r\ne) 긴급 사용 백신 비축 (별도 자금 지원 요청 시)\r\n",
+      "scope_kr": "",
+      "target_disease_pathogen": "Rift Valley Fever",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "특정 X",
+      "total_funding": "Up to $50M",
+      "possibility": "75%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/Request for Proposal - full text.PDF",
+      "created_on": null,
+      "created_id": ""
+    },
+    {
+      "cfp_id": "4",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-01-22",
+      "close_date": "2024-01-23",
+      "title_class": "",
+      "cfp_maintitle": "RNA vaccine platform technologies and \r\nvaccine library development against \r\nemerging and select endemic infectious\r\ndiseases\r\nExtended opportunity",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "https://cepi.net/wp-content/uploads/2022/01/CfP_mRNA-platform_final_12Jan2022.pdf",
+      "objectives": "신흥 및 특정 내성 감염병에 대한 RNA 백신 플랫폼 기술 및 백신 라이브러리 개발을 위한 새로운 자금 지원\r\n\r\nFocus 1: 임상 데이터를 보유한 mRNA 선진 기술 \r\nFocus 2: 혁신에 기반한 새로운 novel RNA 기술",
+      "objectives_kr": "",
+      "scope": "Focus 1: 인허가 지원 및 임상 1/2상 지원 \r\nFocus 2: 초기 개발 지원 (preclinical and/or limited early clinical proof-of-concept)",
+      "scope_kr": "",
+      "target_disease_pathogen": "Rabies\r\nRotavirus \r\nYellow Fever\r\nChikungunya\r\nJapanese Encephalitis\r\nHepatitis B\r\nInfluenza\r\nMeasles\r\nOther viral or bacterial indication as agreed with CEPI\r\nLassa (Focus 1만)\r\nNipah (Focus 1만)\r\n",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "Focus 1: mRNA\r\nFocus2: Novel RNA",
+      "total_funding": "",
+      "possibility": "50%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/FILOVAX_Call text_FINAL_v1.1 (003).pdf.PDF",
+      "created_on": null,
+      "created_id": ""
+    },
+    {
+      "cfp_id": "5",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-01-22",
+      "close_date": "2024-12-22",
+      "title_class": "",
+      "cfp_maintitle": "RNA vaccine platform technologies and \r\nvaccine library development against \r\nemerging and select endemic infectious",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "https://cepi.net/wp-content/uploads/2022/01/CfP_mRNA-platform_final_12Jan2022.pdf",
+      "objectives": "신흥 및 특정 내성 감염병에 대한 RNA 백신 플랫폼 기술 및 백신 라이브러리 개발을 위한 새로운 자금 지원\r\n\r\nFocus 1: 임상 데이터를 보유한 mRNA 선진 기술 \r\nFocus 2: 혁신에 기반한 새로운 novel RNA 기술",
+      "objectives_kr": "",
+      "scope": "Focus 1: 인허가 지원 및 임상 1/2상 지원 \r\nFocus 2: 초기 개발 지원 (preclinical and/or limited early clinical proof-of-concept)",
+      "scope_kr": "",
+      "target_disease_pathogen": "Rabies\r\nRotavirus \r\nYellow Fever\r\nChikungunya\r\nJapanese Encephalitis\r\nHepatitis B\r\nInfluenza\r\nMeasles\r\nOther viral or bacterial indication as agreed with CEPI\r\nLassa (Focus 1만)\r\nNipah (Focus 1만)",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "Focus 1: mRNA\r\nFocus2: Novel RNA",
+      "total_funding": "",
+      "possibility": "30%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/EN_Innovations-Call-Text_FA2_CfP_V2_JUN24.pdf",
+      "created_on": null,
+      "created_id": ""
+    },
+    {
+      "cfp_id": "6",
+      "institution": "CEPI",
+      "strategy": "R&D",
+      "open_date": "2024-01-22",
+      "close_date": "2024-12-22",
+      "title_class": "",
+      "cfp_maintitle": "Innovative technologies to improve \r\nvaccine thermostability",
+      "cfp_subtitle": "",
+      "keyword": "",
+      "site_link": "CfP-thermostability_Jan2022_CallText.pdf (cepi.net)",
+      "objectives": "백신의 열안정성을 개선하기 위한 혁신적인 기술 개발을 위한 관심 표명(Expression of Interest, EoI) 제출을 요청\r\n\r\n검증된 백신 플랫폼(예: 핵산, 단백질 세부단위(보조제 포함), 바이러스 벡터, 바이러스 유사 입자(VLP), 생 또는 불활성화된 바이러스)의 열안정성을 개선하는 기술을 지원",
+      "objectives_kr": "",
+      "scope": "임상적으로 검증된 백신(후보)과 함께 기술의 개념 증명",
+      "scope_kr": "",
+      "target_disease_pathogen": "",
+      "qualification": "",
+      "qualification_kr": "",
+      "vaccine_type": "",
+      "total_funding": "",
+      "possibility": "10%",
+      "status": "N",
+      "file_path": "s3://skbs-docs/cfp/CEPI-CALL/2024-07-08/English_Innovations-to-Prepare-for-Future-Epidemics-and-Pandemics_FA1_Call Text.pdf",
+      "created_on": null,
+      "created_id": ""
+    }
+  ]
+  const tableBody = document.querySelector(".call_table tbody");
+  console.log(tableBody);
+  for (let i = 0; i < listData.length; i++) {
+    const item = listData[i];
+    const row = document.createElement('tr');
+//         <label for="checkbox">
+//   <img src="unchecked.png" alt="체크박스 이미지" class="checkbox-image">
+// </label>
+// <input type="checkbox" id="checkbox" onclick="changeImage()">
+    const checkBoxCell = document.createElement('td');
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    checkBox.id = `select-${item.cfp_id}`;
+    checkBox.value = item.cfp_id;
+    checkBoxCell.appendChild(checkBox);
+    row.appendChild(checkBoxCell);
+
+    const institutionCell = document.createElement('td');
+    institutionCell.textContent = item.institution
+    row.appendChild(institutionCell)
+
+    const titleCell = document.createElement('td');
+    titleCell.textContent = item.cfp_maintitle + "/" + item.cfp_subtitle
+    row.appendChild(titleCell)
+
+    const subTitleCell = document.createElement('td');
+    subTitleCell.textContent = item.cfp_subtitle
+    row.appendChild(subTitleCell)
+
+    const closeCell = document.createElement('td');
+    closeCell.textContent = item.close_date;
+    row.appendChild(closeCell)
+
+    const keyWordCell = document.createElement('td');
+    keyWordCell.textContent = item.keyword
+    row.appendChild(keyWordCell)
+
+    const possibilityCell = document.createElement('td');
+    possibilityCell.textContent = item.possibility
+    row.appendChild(possibilityCell);
+
+    const downCell = document.createElement('td');
+    downCell.textContent = "Download"
+    row.appendChild(downCell);
+
+    tableBody.appendChild(row);
+  }
+</script>
+</body>
+</html>
