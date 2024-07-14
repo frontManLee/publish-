@@ -23,7 +23,7 @@
     </div>
 
     <div class="btn">
-      <button class="btn_nomal">Delete</button>
+      <button class="btn_normal">Delete</button>
       <button class="btn_add">+ Add New</button>
     </div>
   </div>
@@ -31,22 +31,19 @@
   <div class="con_bar">
     <div class="tab_wrap">
       <ul class="tabs">
-        <li class="actvie">View All</li>
+        <li class="active">View All</li>
         <li>Open</li>
         <li>Closed</li>
       </ul>
     </div>
 
     <div class="input-with-label">
-      <div class="input">
-        <div class="content-3">
-          <img class="img" src="../img/search.svg" alt="img"/>
+        <label class="search_box">
           <input class="text-4" placeholder="Search" type="text"/>
-
-        </div>
-      </div>
-
-      <button class="btn_nomal"><img class="img" src="../img/filters-lines.svg">Filters</button>
+        </label>
+      <button class="btn_normal btn_flex" id="filter_btn">
+        <p>Filters</p>
+      </button>
     </div>
 
 
@@ -69,7 +66,10 @@
       <!-- <label for="select-all">
         <img src="../img/checkbox-5.svg" alt="체크박스 이미지">
       </label> -->
-      <input id="select-all" type="checkbox">
+      <label>
+        <input class="select_all blind" id="select-all" type="checkbox"/>
+        <span class="check_icon"></span>
+      </label>
     </th>
     <th>Agency</th>
     <th>Title</th>
@@ -87,13 +87,113 @@
   <div class="pagination mt_10">
     <div class="paging_text">Page 1 of 10</div>
     <div class="paging_btn">
-      <button class="btn_nomal">Previous</button>
-      <button class="btn_nomal">Next</button>
+      <button class="btn_normal">Previous</button>
+      <button class="btn_normal">Next</button>
     </div>
   </div>
 </div>
+<!-- modal 영역 -->
+<div class="modal_wrap blind" id="modal_wrap">
+  <div class="modal_content">
+    <div class="modal_head">
+      <span class="modal_exit position_r" id="modal_exit">X</span>
+      <div class="head_btn position_r ">
+        <input id="toggle1" name="toggle1" type="checkbox" value="1">
+        <label for="toggle1" class="indent_200">스마트 검색</label>
+      </div>
+    </div>
+    <div class="modal_body" id="no_smart">
+      <div class="modal_select">
+        <span class="modal_title">
+          Agency
+        </span>
+          <select >
+            <option>1</option>
+          </select>
+      </div>
+      <div class="modal_select">
+        <span class="modal_title">
+          Information
+        </span>
+        <select >
+          <option>1</option>
+        </select>
+      </div>
 
+      <div class="modal_select w500">
+        <span class="modal_title">
+          Keywords
+        </span>
+        <select class="w500">
+          <option>1</option>
+        </select>
+      </div>
+
+      <div class="modal_select">
+        <span class="modal_title">
+          Liaison
+        </span>
+        <select >
+          <option>1</option>
+        </select>
+        <button class="btn_normal mt_10 position_t150_r">검색</button>
+      </div>
+    </div>
+    <div class="modal_body blind" id="smart">
+      <div class="modal_select">
+        <span class="modal_title ">
+          Keywords
+        </span>
+        <input type="text" class="modal_input">
+        <span class="modal_title mt_10">
+          Liaison
+        </span>
+        <input type="text" class="modal_input">
+        <button class="btn_normal mt_10 position_t150_r">검색</button>
+       </div>
+      </div>
+  </div>
+</div>
 <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const toggleCheckbox = document.getElementById('toggle1');
+    const no_smart = document.getElementById('no_smart');
+    const smart = document.getElementById('smart');
+    const filter_btn = document.getElementById('filter_btn');
+
+    const modal_wrap = document.getElementById('modal_wrap');
+    const modal_exit = document.getElementById('modal_exit');
+    toggleCheckbox.addEventListener('change', () => {
+      if (toggleCheckbox.checked) {
+        no_smart.classList.add('blind');
+        smart.classList.remove('blind');
+      } else {
+        no_smart.classList.remove('blind');
+        smart.classList.add('blind');
+      }
+    });
+
+    modal_exit.addEventListener('click', () => {
+      modal_wrap.classList.add('blind');
+    });
+
+    filter_btn.addEventListener('click', () => {
+      modal_wrap.classList.remove('blind');
+    });
+
+  });
+  const tabs = document.querySelectorAll('.tabs li');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      tabs.forEach(item => item.classList.remove('active'));
+
+      // Add active class to the clicked tab
+      this.classList.add('active');
+    });
+  });
+
   const listData = [
     {
       "cfp_id": "2",

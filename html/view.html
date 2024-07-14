@@ -14,73 +14,376 @@
     <div class="title_wrap">
       <div class="m_title">
         <strong class="main_title">Global CFP Database </strong>
-        <span class="new_call">10proi</span>
+        <!--        <span class="new_call">10proi</span>-->
       </div>
       <div class="s_title">
-        <p class="sub_title">CEPI, BMGF 등의 글로벌 Funding 기관의 Call for Proposal Data를 수집 관리함.111</p>
+        <p class="sub_title">CEPI, BMGF 등의 글로벌 Funding 기관의 Call for Proposal Data를 수집 관리함.</p>
       </div>
     </div>
 
     <div class="btn">
-      <button class="btn_nomal">Delete</button>
-      <button class="btn_add">+ Add New</button>
+      <button class="btn_normal" onclick="editing()">Edit</button>
+      <button class="btn_normal hidden">임시저장</button>
+      <button class="btn_add hidden">SAVE</button>
     </div>
   </div>
 
 </div>
 
 
-  <div class="view_main">
-    <div class="view_tab_wrap">
-      <ul class="view_tab">
-        <li class="actvie">CFP</li>
-        <li>AWD1</li>
-        <li>AWD2</li>
-        <li>AWD3</li>
-      </ul>
+<div class="view_main">
+
+  <div class="view_tab_wrap">
+    <ul class="view_tab">
+      <li class="active">CFP</li>
+      <li>AWD1</li>
+      <li>AWD2</li>
+      <li>AWD3</li>
+    </ul>
+  </div>
+  <!-- CFP 영역 시작 -->
+  <div class="view_content">
+    <div class="view_component_head">
+      <div class="head_btn">
+        <input id="toggle1" name="toggle1" type="checkbox" value="1">
+        <label for="toggle1">원문보기</label>
+      </div>
+      <div class="head_text">
+        2023.03.01(Open)<br>
+        2023.03.01(Open)<br>
+        2023.03.01(Open)<br>
+      </div>
     </div>
-    <div class="view_content">
-      <div class="view_width">
-        <div class="view_component_wrapper">
-          <div class="view_component_title mb_10">
-            {해당 컴포넌트의 title}
+
+    <div class="view_width">
+      <div class="view_component">
+        <div class="view_component_wrapper w500">
+          <div class="view_component_title">
+            F/U 담당자
           </div>
           <div class="view_component_content">
             <label>
-              <textarea>contentcontent</textarea>
+              <textarea id="text_1"></textarea>
             </label>
           </div>
         </div>
-        <div class="view_component_wrapper">
-          <div class="view_component_title mb_10">
-            {해당 컴포넌트의 title}
+        <div class="view_component_wrapper w500">
+          <div class="view_component_title">
+            SK 전략 분류
           </div>
           <div class="view_component_content">
             <label>
-              <textarea>contentcontent</textarea>
+              <textarea id="text_2"></textarea>
             </label>
           </div>
         </div>
       </div>
 
-
-      <div class="view_component_wrapper_length">
-        <div class="view_component_title">
-          {해당 컴포넌트의 title}
-        </div>
-        <div class="view_component_content">
-          {해당 컴포넌트의 content}
-        </div>
-        <div class="view_component_title">
-          {해당 컴포넌트의 title}
-        </div>
-        <div class="view_component_content">
-          {해당 컴포넌트의 content}
+      <div class="view_component">
+        <div class="view_component_wrapper_length">
+          <div class="view_component_title">
+            Title
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_3"></textarea>
+            </label>
+          </div>
         </div>
       </div>
 
+      <div class="view_component">
+        <div class="view_component_wrapper wp_50">
+          <div class="view_component_title">
+            Sub Title
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_4"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="view_component_wrapper wp_50">
+          <div class="view_component_title">
+            Keyword
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_5"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_component">
+        <div class="view_component_wrapper_length">
+          <div class="view_component_title">
+            목적
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea class="ht_350" id="text_6"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_component">
+        <div class="view_component_wrapper_length">
+          <div class="view_component_title">
+            지원범위
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea class="ht_350" id="text_7"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_component">
+        <div class="view_component_wrapper_length">
+          <div class="view_component_title">
+            Target Disease/Pathogen
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_8"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_component">
+        <div class="view_component_wrapper_length">
+          <div class="view_component_title">
+            백신유형
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_9"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_component">
+        <div class="view_component_wrapper w500">
+          <div class="view_component_title">
+            Total Funding
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_10"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="view_component_wrapper w500">
+          <div class="view_component_title">
+            SK 지원가능성
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_11"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="view_component_wrapper w500">
+          <div class="view_component_title">
+            Call Status
+          </div>
+          <div class="view_component_content">
+            <label>
+              <textarea id="text_12"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="view_file">
+        <div class="view_file_wrapper">
+          <div class="view_file_upload">
+            Upload Files
+            <span class="btn_file_upload" id="btn_file_upload"></span>
+          </div>
+
+          <div class="view_file_list_wrap">
+            <div class="view_file_list">
+              <div class="view_file_list_title">
+                <p class="view_file_list_left">RPA</p>
+                <p class="view_file_list_right">Friday 2:20pm</p>
+              </div>
+              <div class="view_file_content">
+                <span class="btn_file_icon"></span>
+                <div class="view_file_content_text">
+                  <span>Upload Files</span>
+                  <span>200 KB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="view_file_list">
+              <div class="view_file_list_title">
+                <p class="view_file_list_left">RPA</p>
+                <p class="view_file_list_right">Friday 2:20pm</p>
+              </div>
+              <div class="view_file_content">
+                <span class="btn_file_icon"></span>
+                <div class="view_file_content_text">
+                  <span>Upload Files</span>
+                  <span>200 KB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="view_file_list">
+              <div class="view_file_list_title">
+                <p class="view_file_list_left">RPA</p>
+                <p class="view_file_list_right">Friday 2:20pm</p>
+              </div>
+              <div class="view_file_content">
+                <span class="btn_file_icon"></span>
+                <div class="view_file_content_text">
+                  <span>Upload Files</span>
+                  <span>200 KB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="view_file_list">
+              <div class="view_file_list_title">
+                <p class="view_file_list_left">RPA</p>
+                <p class="view_file_list_right">Friday 2:20pm</p>
+              </div>
+              <div class="view_file_content">
+                <span class="btn_file_icon"></span>
+                <div class="view_file_content_text">
+                  <span>Upload Files</span>
+                  <span>200 KB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="view_file_list">
+              <div class="view_file_list_title">
+                <p class="view_file_list_left">RPA</p>
+                <p class="view_file_list_right">Friday 2:20pm</p>
+              </div>
+              <div class="view_file_content">
+                <span class="btn_file_icon"></span>
+                <div class="view_file_content_text">
+                  <span>Upload Files</span>
+                  <span>200 KB</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- CFP 영역 끝 -->
+</div>
+<script>
+  let viewData = {
+    user: "TBD",
+    type: "TBD",
+    title: "Focus Area 1: advancing innovative rapid-response vaccine platforms that can transform the response to a future Disease X",
+    subTitle: "Innovations to Prepare for Future Epidemics and Pandemic",
+    keyWord: "Vaccine development and manufacturing",
+    target: "The purpose of Focus Area 1 in the document “Innovations to Prepare for Future Epidemics and Pandemics” is to advance vaccine platforms that can transform outbreak response to Disease X. The key objectives and scope include:\n" +
+      "\n" +
+      "\t1.\tSpeed: Accelerating the development of vaccines and other biologic countermeasures within 100 days of an outbreak.\n" +
+      "\t2.\tSafety and Efficacy: Ensuring an acceptable safety/reactogenicity profile, reducing viral transmission, providing protection against potential variants and related viruses, achieving rapid-onset and long-duration of protection.\n" +
+      "\t3.\tAccessibility: Developing single-dose, low-cost, thermostable vaccines that can be rapidly scaled for manufacturing.\n" +
+      "\n" +
+      "Through this focus area, CEPI aims to build significant expertise in preclinical, clinical, and regulatory aspects of vaccine platforms, ensuring they are quickly adoptable in an outbreak and accessible to all populations in need. The program encourages the development of a global vaccine library and innovations that enhance equitable access to these technologies. Proposals can seek funding for various stages, from early-stage exploratory awards to more advanced platform development, and developers in the Global South are particularly encouraged to apply",
+    support: "The scope of the fund includes the following:\n" +
+      "\n" +
+      "\t1.\tExploratory Awards:\n" +
+      "\t•\tUp to $1 million in funding.\n" +
+      "\t•\tSupport for up to 18 months.\n" +
+      "\t•\tIncludes in vitro and in vivo studies to assess the feasibility of the technology and address key data gaps.\n" +
+      "\t•\tIncludes exploratory CMC (Chemistry, Manufacturing, and Controls) studies.\n" +
+      "\t2.\tPlatform Development:\n" +
+      "\t•\tInitial funding up to $5 million.\n" +
+      "\t•\tSupport for up to 36 months.\n" +
+      "\t•\tFurther investment may be considered if initial results are promising.\n" +
+      "\t•\tIncludes preclinical studies, studies supporting regulatory filings (e.g., IND-enabling studies), CMC development, platform optimization, GMP material manufacturing for Phase I studies, and conduct of Phase I studies.\n" +
+      "\t•\tApplicants may utilize CEPI-provided assays, standards, animal models for select pathogens, and an adjuvant library.\n" +
+      "\t3.\tSupport Areas:\n" +
+      "\t•\tIn vitro and in vivo studies to assess immunogenicity, efficacy, safety, and mechanism-of-action.\n" +
+      "\t•\tStudies supporting regulatory filings and platform optimization.\n" +
+      "\t•\tGMP material manufacturing and Phase I clinical trials.\n" +
+      "\t4.\tSpecific Virus Targets:\n" +
+      "\t•\tUse of vaccine candidates for well-characterized viruses (e.g., SARS-CoV-2, RSV, Rabies, Yellow Fever, Japanese Encephalitis, Hepatitis B, Influenza, Measles, etc.).\n" +
+      "\t•\tPotential to use other viruses with CEPI’s consent.\n" +
+      "\t5.\tAdditional Conditions:\n" +
+      "\t•\tDevelopers based in the Global South are particularly encouraged to apply.\n" +
+      "\t•\tApplicants can use CEPI’s resources (assays, animal models, adjuvant library) for their projects.\n" +
+      "\t•\tIt’s recommended to discuss the suitability of potential innovations with CEPI before submission.\n" +
+      "\n" +
+      "This scope aims to foster the development of rapid, safe, and effective vaccine platforms and ensure equitable access to vaccines globally",
+    pathogen: "SARS-CoV-2. RSV, Rabies, Yellow Fever, Chikungunya, Japanese Encephalitis, Hepatitis B, Influenza, Measles, Other viruses",
+    vccineType: "mRNA vaccines, DNA vaccines, viral vector vaccines, protein subunit vaccines, inactivated vaccines, live attenuated vaccines.",
+    totalFunding: "Up to $1 million for Exploratory Awards and up to $5 million for Platform Development.",
+    Supportability: "79%",
+    callStatus: "Open",
+  }
+  const text_1 = document.getElementById("text_1");
+  const text_2 = document.getElementById("text_2");
+  const text_3 = document.getElementById("text_3");
+  const text_4 = document.getElementById("text_4");
+  const text_5 = document.getElementById("text_5");
+  const text_6 = document.getElementById("text_6");
+  const text_7 = document.getElementById("text_7");
+  const text_8 = document.getElementById("text_8");
+  const text_9 = document.getElementById("text_9");
+  const text_10 = document.getElementById("text_10");
+  const text_11 = document.getElementById("text_11");
+  const text_12 = document.getElementById("text_12");
 
+  text_1.value = viewData.user;
+  text_2.value = viewData.type;
+  text_3.value = viewData.title;
+  text_4.value = viewData.subTitle;
+  text_5.value = viewData.keyWord;
+  text_6.value = viewData.target;
+  text_7.value = viewData.support;
+  text_8.value = viewData.pathogen;
+  text_9.value = viewData.vccineType;
+  text_10.value = viewData.totalFunding;
+  text_11.value = viewData.Supportability;
+  text_12.value = viewData.callStatus;
+
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(function(textarea) {
+    textarea.setAttribute('readonly', 'readonly');
+  });
+
+  const tabs = document.querySelectorAll('.view_tab li');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      tabs.forEach(item => item.classList.remove('active'));
+
+      // Add active class to the clicked tab
+      this.classList.add('active');
+    });
+  });
+
+
+
+  /* 기능 스크립트 구간*/
+  const editing =()=>{
+    console.log("123123123")
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(function(textarea) {
+      textarea.removeAttribute('readonly');
+    });
+  }
+</script>
 </body>
 </html>

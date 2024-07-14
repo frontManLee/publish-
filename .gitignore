@@ -12,6 +12,10 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+.idea/vcs.xml
+.idea/modules.xml
+.idea/publish-.iml
+
 # AWS User-specific
 .idea/**/aws.xml
 
@@ -166,8 +170,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-.vcs.xml
-.modules.xml
-.publish-.iml
+
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,windows
